@@ -59,14 +59,14 @@ def load_data(city, month, day):
     print(df['month'])
     df['day_of_week']=df['Start Time'].dt.day_name()
     df['hour_of_day']=df['Start Time'].dt.hour
-    
-    
+    #it is just another comment
+
     if month != 'all':
        df =df[df['month'].str.lower() == month]
 
     if day != 'all':
        df =df[df['day_of_week'].str.lower() == day]
-        
+
     return df
 
 
@@ -79,13 +79,13 @@ def time_stats(df):
     # TO DO: display the most common month
     most_common_month = df['month'].mode()
     print("The most common month is ", most_common_month)
-    
+
 
     # TO DO: display the most common day of week
     most_common_day_week = df['day_of_week'].mode()
     print("The most common day is ", most_common_day_week)
-    
-    
+
+
     # TO DO: display the most common start hour
     most_common_hour = df['hour_of_day'].mode()
     print("The most common hour is ", most_common_hour)
@@ -107,12 +107,12 @@ def station_stats(df):
     # TO DO: display most commonly used end station
     most_common_end_station = df['End Station'].mode()
     print("The most common end station is: ", most_common_end_station)
-    
+
     # TO DO: display most frequent combination of start station and end station trip
     combination_of_stations = df['Start Station'] + df['End Station']
     most_common_combination = combination_of_stations.mode()
     print("The most common combination of start and end station is: ", most_common_combination)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -134,8 +134,8 @@ def display_data(df):
             comb_stat += 5
             print(combination_start_end.head(comb_stat))
             view_request = input("Do you like to see 5 more? Yes or no: ").lower()
-            
-       
+
+
   #  if data_question not in ('yes','no'):
       #  data_question = input("Do you like to see the first 5 rows of start and end stations? Enter yes or no").lower()
   #   if data_question == 'yes':
@@ -178,7 +178,7 @@ def user_stats(df):
         print("The counts of gender are: ", df['Gender'].value_counts(dropna=False))
     else:
         print("Gender data is not available here")
-      
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
@@ -186,13 +186,13 @@ def user_stats(df):
         print("The earliest year of birth is: ", earliest_yob)
     else:
         print("This dataset does not include a birth year. Therefore, no earliest year of birth can be calculated.")
-    
+
     if 'Birth Year' in df:
         recent_yob = df['Birth Year'].max()
         print("The most recent year of birth is: ", recent_yob)
     else:
         print("This dataset does not include a birth year. Therefore, no most recent year of birth can be calculated.")
-    
+
     if 'Birth Year' in df:
         common_yob = df['Birth Year'].mode()
         print("The most common year of birth is: ", common_yob)

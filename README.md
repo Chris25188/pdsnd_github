@@ -18,3 +18,6 @@ It's important to give proper credit. Add links to any repo that inspired you or
 
 ### Adding some text
 Some text for project 3 of the udacity python program
+
+### Adding text for part 3 of project 3
+Learning version control is kind of fun
